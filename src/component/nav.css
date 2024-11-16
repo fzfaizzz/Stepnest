@@ -1,0 +1,296 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.nav {
+  background-color: #6f6f6f;
+  width: 100%;
+  font-family: sans-serif;
+  color: wheat;
+}
+
+a {
+  margin-top: 5px;
+}
+
+/* Animation for search button */
+.search-button {
+  background-color: slategray;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.search-button:hover {
+  background-color: #1e90ff;
+  transform: scale(1.1);
+}
+
+/* Animation for icons */
+.nav-icon {
+  color: black;
+  transition: color 0.5s ease, transform 0.5s ease;
+}
+
+.nav-icon:hover {
+  color: #1e90ff;
+  transform: rotate(20deg) scale(1);
+}
+
+/* Animation for navigation links */
+.nav-link, .menu-link {
+  position: relative;
+  color: black;
+  text-decoration: none;
+  transition: color 0.5s ease, transform 0.5s ease, background-color 0.3s ease;
+}
+
+.nav-link:hover, .menu-link:hover {
+  color: #1e90ff;
+  background-color: rgba(30, 144, 255, 0.1);
+  border-radius: 4px;
+  transform: translateY(-2px);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.nav-link::after, .menu-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: #1e90ff;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after, .menu-link:hover::after {
+  width: 100%;
+}
+
+/* Slide-in animation for the mobile menu */
+@keyframes slideIn {
+  from {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+.menu {
+  animation: slideIn 0.3s ease-in-out forwards;
+}
+
+/* Profile menu styles */
+.profile-menu {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  width: 12rem;
+  z-index: 20;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.profile-menu.open {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.profile-link {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.profile-link:hover {
+  color: #1e90ff;
+}
+
+/* ShowPro Card Hover Effects */
+.showpro div {
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  width: 384px;
+  height: 224px;
+  box-shadow: 3px 3px 10px black;
+  overflow: hidden;
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.showpro img {
+  width: 384px;
+  height: 224px;
+  border-radius: 6px;
+}
+
+.showpro button {
+  background: #217cd2;
+  width: 64px;
+  border-radius: 6px;
+  color: white;
+}
+
+.intro {
+  height: 100px;
+  width: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(27, 27, 27, 0.5);
+  display: flex;
+  text-align: right;
+  flex-direction: column;
+  padding-right: 20px;
+  opacity: 0;
+  transition: opacity 0.6s;
+}
+
+.intro > * {
+  transform: translateX(100%);
+  transition: transform 0.6s;
+}
+
+.showpro:hover {
+  cursor: pointer;
+}
+
+.intro:hover {
+  opacity: 1;
+}
+
+.intro:hover > * {
+  transform: translateX(0);
+}
+
+/* Card fade-in effect */
+.showpro div {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+/* Enhanced card hover effect */
+.showpro div:hover {
+  transform: scale(1.05) rotateY(10deg);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Button hover effect */
+.buy:hover {
+  background-color: #1e90ff;
+  color: white;
+  transform: scale(1.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.seemore:hover{
+  background-color: #1e90ff;
+  transform: scale(1.1);
+  transition: transform 0.3s ease,
+}
+
+.social-icon {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2); /* Grow the icon slightly */
+  color: #e2e8f0; /* Light gray on hover */
+}
+
+/* Existing styles above... */
+
+/* For smaller screens, make the content always visible */
+@media (max-width: 1024px) {
+  .intro {
+    opacity: 1;
+    position: relative;
+    top: -200px;
+    width: 10%; /* Ensure it takes full width on small screens */
+    background: none; 
+    padding-right: 10px; /* Adjust padding if needed */
+  }
+
+  .intro > * {
+    transform: none;
+    transition: none; /* Remove the transition for mobile */
+  }
+
+  .showpro div {
+    height: 224px; /* Allow the card height to adjust based on content */
+    border: none;
+    box-shadow: none;
+  }
+
+  .showpro img {
+    width: 384px; /* Ensure images are responsive */
+    height: 224px; /* Maintain aspect ratio */
+  }
+
+  /* Adjusting the intro positioning for better alignment on small screens */
+  .intro h1, .intro p, .intro button {
+    text-align: right; /* Center-align text and button */
+    transform: none; /* Remove any transformations */
+    margin: 5px 0; /* Add some spacing */
+  }
+
+  .intro button {
+    /* margin: 10px auto; Center the button */
+    margin-left: 280px;
+    padding-right: 25px;
+    display: block; /* Ensure it's a block element */
+    width: auto; /* Allow the button to adjust its width */
+    transform: none; /* No transformations on hover */
+    background-color: #84e1bc; /* Default button color */
+  }
+
+  .showpro div:hover {
+    transform: none; /* Remove hover effect */
+    box-shadow: none; /* Remove hover box-shadow */
+  }
+
+  /* Keep the 'see more' button consistent */
+  .seemore:hover {
+    background-color: #1e90ff;
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+}
+
+/* nav.css */
+.search-button {
+  background-color: #1a202c;
+  color: #fff;
+}
+
+.nav-link {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-icon {
+  color: #333;
+}
+
+.menu-link {
+  color: #000;
+  text-decoration: none;
+  padding: 10px 0;
+  font-weight: bold;
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .mobile-search-input {
+    width: 100%;
+  }
+  
+  .transition-all {
+    transition: all 0.3s ease-in-out;
+  }
+}

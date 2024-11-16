@@ -1,0 +1,66 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.main{
+    height: 100vh;
+    background-image: url("images/poster1 2.jpg");
+    background-size: cover;
+    opacity: 0.9;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:100;
+    animation: change 20s infinite ease-in-out;
+}
+.shoes{
+    filter: brightness(0) invert(1);
+}
+.btn {
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  background-color: black;
+  color: white;
+  transform: scale(1.05); /* Slightly increases the size of the button */
+}
+.menu{
+background: rgba(147, 146, 146, 0.195);
+backdrop-filter: blur(3px);
+border: 1px solid rgba(147, 146, 146, 0.195) ;
+border-radius: 0 10px;
+box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 37);
+color: rgba(255, 255, 255, 0.825);
+
+}
+@keyframes change{
+40%{
+    background-image: url("images/poster1 1.jpg");
+  }
+ 41%{
+  background-image:url("images/poster1.png");
+}
+}
+
+.btsg:hover{
+  transform: scale(1.05);
+  transition: all 0.5s ease-in-out ;
+}
+.btlg:hover{
+  transform: scale(1.05);
+  transition: all 0.5s ease-in-out ;
+  z-index: 20;
+}
+a:hover{
+  transform: scale(1.15);
+  transition: all 0.1s ease-in-out ;
+  color: black;
+}
+
+
+
+

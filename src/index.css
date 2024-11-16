@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer{
+    @font-face {
+        font-family: 'Courier';
+        src: url('/path/to/courier.woff2') format('woff2'),
+             url('/path/to/courier.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+      }
+      
+}

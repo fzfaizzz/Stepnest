@@ -1,0 +1,81 @@
+/* Styling for the See More Products page */
+.see-more-products {
+    padding: 20px;
+  }
+  
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    margin-top: 30px;
+  }
+  
+  .product-card {
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .product-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .product-info {
+    padding: 15px;
+    color: white;
+  }
+  
+  .product-name {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+  
+  .product-price {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .current-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffd700;
+  }
+  
+  .original-price {
+    font-size: 1rem;
+    text-decoration: line-through;
+    color: #999;
+  }
+  
+  .product-size {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+  
+  .buy-button {
+    background-color: #ff6347;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .buy-button:hover {
+    background-color: #ff4500;
+  }
+
+  
